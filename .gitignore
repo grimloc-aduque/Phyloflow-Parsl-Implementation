@@ -17,6 +17,7 @@ parsl/logs/*
 !parsl/logs
 !parsl/logs/example*
 
+!.vscode/setting.json
 
 
 
