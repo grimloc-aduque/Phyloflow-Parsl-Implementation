@@ -1,0 +1,5 @@
+2023-06-21 10:27:58.088 wdl.w:phyloflow.t:call-aggregate_json NOTICE task setup :: name: "aggregate_json", source: "workflows/phyloflow_standalone.wdl", line: 150, column: 1, dir: "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-aggregate_json", thread: 140672388781760
+2023-06-21 10:27:58.104 wdl.w:phyloflow.t:call-aggregate_json NOTICE docker image :: tag: "public.ecr.aws/k1t6h9x8/phyloflow/aggregate_json:latest", id: "sha256:faada7e67d63f5b68d23542f033baccc57b4d16ef679824a35002c55fab83d17", RepoDigest: "public.ecr.aws/k1t6h9x8/phyloflow/aggregate_json@sha256:7c4b606fc582241ad187a1cecde98e236a9d5830e5332ea56d7e709e3dfea4e0"
+2023-06-21 10:27:59.170 wdl.w:phyloflow.t:call-aggregate_json NOTICE docker task running :: service: "m94ubs4iddb7", task: "p0ge9vdlm6", node: "k3ydrjghr4", message: "started"
+2023-06-21 10:28:00.186 wdl.w:phyloflow.t:call-aggregate_json NOTICE docker task exit :: state: "complete", exit_code: 0
+2023-06-21 10:28:00.534 wdl.w:phyloflow.t:call-aggregate_json NOTICE done

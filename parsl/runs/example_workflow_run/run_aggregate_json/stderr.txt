@@ -1,0 +1,12 @@
+--> executable follows <--
+ 
+        cd './aggregate_json/code' ;
+		conda run -n aggregate-json python aggregate_json.py \
+			-v /home/alejo/Documents/NCSA/phyloflow_parsl/example_data/VEP_raw.A25.mutect2.filtered.snp.vcf \
+			-c /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:52:58/run_pyclone_vi/cluster_assignment.tsv \
+			-s /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:52:58/run_spruce_tree/spruce.res.json \
+			-S /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:52:58/run_spruce_tree/spruce.res.gz \
+			-j /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:52:58/run_aggregate_json/aggregated.json \
+			--program mutect
+        
+--> end executable <--

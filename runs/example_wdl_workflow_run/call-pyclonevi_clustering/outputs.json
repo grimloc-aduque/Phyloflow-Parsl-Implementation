@@ -1,0 +1,5 @@
+{
+  "pyclone_vi.cluster_assignment": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-pyclonevi_clustering/out/cluster_assignment/cluster_assignment.tsv",
+  "pyclone_vi.err_response": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-pyclonevi_clustering/out/err_response/stderr.txt",
+  "pyclone_vi.response": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-pyclonevi_clustering/out/response/stdout.txt"
+}

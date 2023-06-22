@@ -1,0 +1,7 @@
+spruce_entrypoint.sh begin.
+list of input files is: /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/spruce_formatted.tsv
+SPRUCE: Enumerating cliques
+SPRUCE: Running enumerate
+SPRUCE: Running rank
+SPRUCE: Visualize
+spruce_entrypoint.sh finished.

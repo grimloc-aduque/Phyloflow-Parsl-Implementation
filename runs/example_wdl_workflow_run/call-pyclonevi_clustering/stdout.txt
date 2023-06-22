@@ -1,0 +1,26 @@
+hello from inside the pyclone-vi container. Does conda work?:
+input args: /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/pyclone_vi_formatted.tsv
+Tumour content column not found. Setting values to 1.0.
+
+Samples: A25
+Num mutations: 421
+Performing restart 0
+Setting annealing factor to : 1.0
+
+Iteration: 0
+ELBO: -12664.159838157411
+Number of clusters used: 10
+
+Iteration: 100
+ELBO: -1072.674172388009
+Number of clusters used: 4
+
+Fitting completed
+ELBO: -1071.5676060365965
+Number of clusters used: 4
+
+All restarts completed
+Final ELBO: -1071.5676060365965
+Number of clusters used: 4
+
+entrypoint.sh complete

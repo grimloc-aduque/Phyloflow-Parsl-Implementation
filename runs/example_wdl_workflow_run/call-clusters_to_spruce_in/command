@@ -1,0 +1,14 @@
+
+pwd
+mkdir pyclone_samples
+out_dir=$(pwd)
+cd /code
+sh cluster_transform_entrypoint.sh pyclone-vi /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/cluster_assignment.tsv \
+    0.050000 $out_dir/spruce_formatted.tsv \
+    /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/pyclone_vi_formatted.tsv
+pwd
+ls -al
+cd ..
+ls -al /
+ls /mnt
+    

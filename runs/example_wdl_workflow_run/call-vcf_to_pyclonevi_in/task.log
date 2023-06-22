@@ -1,0 +1,6 @@
+2023-06-21 10:27:46.421 wdl.w:phyloflow.t:call-vcf_to_pyclonevi_in NOTICE task setup :: name: "vcf_transform", source: "workflows/phyloflow_standalone.wdl", line: 12, column: 1, dir: "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-vcf_to_pyclonevi_in", thread: 140672388781760
+2023-06-21 10:27:46.541 wdl.w:phyloflow.t:call-vcf_to_pyclonevi_in NOTICE docker swarm resources :: workers: 1, max_cpus: 8, max_mem_bytes: 16433520640, total_cpus: 8, total_mem_bytes: 16433520640
+2023-06-21 10:27:46.548 wdl.w:phyloflow.t:call-vcf_to_pyclonevi_in NOTICE docker image :: tag: "public.ecr.aws/k1t6h9x8/phyloflow/vcf_transform:latest", id: "sha256:1af14b015ff6b24aa24bb784278c4b3cd193915a3f2a793259fdce888591c2ae", RepoDigest: "public.ecr.aws/k1t6h9x8/phyloflow/vcf_transform@sha256:f9a83db0d009bcee775918d96d163af5d5b91bd57f5131c961020f8f122f6c62"
+2023-06-21 10:27:47.532 wdl.w:phyloflow.t:call-vcf_to_pyclonevi_in NOTICE docker task running :: service: "4j2b5q9odjlo", task: "0j7jndm8sw", node: "k3ydrjghr4", message: "started"
+2023-06-21 10:27:48.585 wdl.w:phyloflow.t:call-vcf_to_pyclonevi_in NOTICE docker task exit :: state: "complete", exit_code: 0
+2023-06-21 10:27:48.914 wdl.w:phyloflow.t:call-vcf_to_pyclonevi_in NOTICE done

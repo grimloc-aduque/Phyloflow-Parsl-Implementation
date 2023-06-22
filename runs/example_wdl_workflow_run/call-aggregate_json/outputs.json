@@ -1,0 +1,5 @@
+{
+  "aggregate_json.aggregated_json": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-aggregate_json/out/aggregated_json/aggregated.json",
+  "aggregate_json.err_response": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-aggregate_json/out/err_response/stderr.txt",
+  "aggregate_json.response": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-aggregate_json/out/response/stdout.txt"
+}

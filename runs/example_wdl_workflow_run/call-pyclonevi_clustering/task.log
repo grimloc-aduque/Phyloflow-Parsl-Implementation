@@ -1,0 +1,5 @@
+2023-06-21 10:27:48.915 wdl.w:phyloflow.t:call-pyclonevi_clustering NOTICE task setup :: name: "pyclone_vi", source: "workflows/phyloflow_standalone.wdl", line: 61, column: 1, dir: "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-pyclonevi_clustering", thread: 140672388781760
+2023-06-21 10:27:48.929 wdl.w:phyloflow.t:call-pyclonevi_clustering NOTICE docker image :: tag: "public.ecr.aws/k1t6h9x8/phyloflow/pyclone_vi:latest", id: "sha256:f6c6947bd00e0eb1bc31ba44276539d965ace9269b42d1ca01f42da0d1b884f8", RepoDigest: "public.ecr.aws/k1t6h9x8/phyloflow/pyclone_vi@sha256:440335fed7f8c89228ba4c156b2418cd740af31d563ca1338e7a08a6b7a563f0"
+2023-06-21 10:27:51.138 wdl.w:phyloflow.t:call-pyclonevi_clustering NOTICE docker task running :: service: "2qee2v80yamw", task: "hx0xgxutsk", node: "k3ydrjghr4", message: "started"
+2023-06-21 10:27:53.345 wdl.w:phyloflow.t:call-pyclonevi_clustering NOTICE docker task exit :: state: "complete", exit_code: 0
+2023-06-21 10:27:53.712 wdl.w:phyloflow.t:call-pyclonevi_clustering NOTICE done

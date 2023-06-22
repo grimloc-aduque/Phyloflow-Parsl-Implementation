@@ -1,0 +1,3 @@
+
+sh /code/spruce_entrypoint.sh /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/spruce_formatted.tsv
+    

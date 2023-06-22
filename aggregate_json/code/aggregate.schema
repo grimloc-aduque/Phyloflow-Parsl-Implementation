@@ -1,0 +1,107 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "version": {
+            "type": "string",
+            "enum": ["phylodiver v0.1.0"]
+        },
+        "samples": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "sample_id": {"type": "number"},
+                    "name": {"type": "string"},
+                    "type": {"enum": ["normal", "tumor"]}
+                }
+            }
+        },
+        "SNV": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "SNV_id": {"type": "number"},
+                    "chr": {"type": "string"},
+                    "start": {"type": "number"},
+                    "reference": {"type": "string"},
+                    "variant": {"type": "string"},
+                    "strand": {"type": "string"},
+                    "consequence": {"type": "string"},
+                    "symbol": {"type": "string"},
+                    "gene": {"type": "string"},
+                    "vaf": {
+                        "type": "array",
+                        "items": {"type": "number"}
+                    },
+                    "vaf_counts": {
+                        "type": "array",
+                        "items": {
+                            "type": "array",
+                            "items": {"type": "number"}
+                        }
+                    },
+                    "amino_acid_change": {"type": "string"}
+                },
+                "required": ["SNV_id", "chr", "start", "reference", "variant"]
+            }
+        },
+        "clusters": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "cluster_id": {"type": "number"},
+                    "sample_name": {"type": "string"},
+                    "sample_id": {"type": "number"},
+                    "variants": {
+                        "type": "array",
+                        "items": {"type": "number"}
+                    }
+                },
+                "required": ["cluster_id", "sample_name", "sample_id", "variants"]
+            }
+        },
+        "trees": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "tree_id": {"type": "number"},
+                    "tree_name": {"type": "string"},
+                    "tree_score": {"type": ["number", "null"]},
+                    "nodes": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "node_name": {"type": "string"},
+                                "cluster_id": {"type": "number"},
+                                "prevalence": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "sample_id": {"type": "number"},
+                                            "value": {"type": "number"}
+                                        }
+                                    }
+                                },
+                                "children": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": ["node_name", "prevalence", "children"]
+                        }
+                    }
+                },
+                "required": ["tree_id", "tree_name", "tree_score"]
+            }
+        }
+    },
+    "required": ["version", "samples", "SNV", "clusters", "trees"]
+}

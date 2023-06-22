@@ -1,0 +1,23 @@
+
+# WDL outputs
+
+runs/*
+!runs/
+!runs/example*
+
+# Parsl outputs
+
+parsl/__pycache__/
+
+parsl/runs/*
+!parsl/runs/
+!parsl/runs/example*
+
+parsl/logs/*
+!parsl/logs
+!parsl/logs/example*
+
+
+
+
+

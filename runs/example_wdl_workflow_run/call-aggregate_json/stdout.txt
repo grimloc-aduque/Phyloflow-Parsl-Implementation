@@ -1,0 +1,34 @@
+/mnt/miniwdl_task_container/work
+/code
+total 16
+drwxr-xr-x 1 root root   66 Jul 11  2022 .
+drwxr-xr-x 1 root root  182 Jun 21 15:27 ..
+-rw-rw-r-- 1 root root 4071 Jun  8  2022 aggregate.schema
+-rw-rw-r-- 1 root root 9210 Jul 11  2022 aggregate_json.py
+total 24
+drwxr-xr-x   1 root root  182 Jun 21 15:27 .
+drwxr-xr-x   1 root root  182 Jun 21 15:27 ..
+-rwxr-xr-x   1 root root    0 Jun 21 15:27 .dockerenv
+lrwxrwxrwx   1 root root    7 Jan 19  2021 bin -> usr/bin
+drwxr-xr-x   1 root root    0 Apr 15  2020 boot
+drwxr-xr-x   1 root root   66 Jul 11  2022 code
+drwxr-xr-x   5 root root  340 Jun 21 15:27 dev
+drwxr-xr-x   1 root root 1694 Jun 21 15:27 etc
+drwxr-xr-x   1 root root   20 Jun 29  2021 home
+lrwxrwxrwx   1 root root    7 Jan 19  2021 lib -> usr/lib
+lrwxrwxrwx   1 root root    9 Jan 19  2021 lib32 -> usr/lib32
+lrwxrwxrwx   1 root root    9 Jan 19  2021 lib64 -> usr/lib64
+lrwxrwxrwx   1 root root   10 Jan 19  2021 libx32 -> usr/libx32
+drwxr-xr-x   1 root root    0 Jan 19  2021 media
+drwxr-xr-x   1 root root   44 Jun 21 15:27 mnt
+drwxr-xr-x   1 root root   10 Jun 29  2021 opt
+dr-xr-xr-x 494 root root    0 Jun 21 15:27 proc
+drwx------   1 root root   30 Jan 19  2021 root
+drwxr-xr-x   1 root root   54 Jun 29  2021 run
+lrwxrwxrwx   1 root root    8 Jan 19  2021 sbin -> usr/sbin
+drwxr-xr-x   1 root root    0 Jan 19  2021 srv
+dr-xr-xr-x  13 root root    0 Jun 21 15:27 sys
+drwxrwxrwt   1 root root    0 Jun 21 15:27 tmp
+drwxr-xr-x   1 root root  102 Jan 19  2021 usr
+drwxr-xr-x   1 root root   90 Jan 19  2021 var
+miniwdl_task_container

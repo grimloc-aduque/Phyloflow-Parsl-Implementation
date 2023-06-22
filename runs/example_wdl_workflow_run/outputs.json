@@ -1,0 +1,8 @@
+{
+  "phyloflow.aggregated_json": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/out/aggregated_json/aggregated.json",
+  "phyloflow.input_mutations": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/out/input_mutations/pyclone_vi_formatted.tsv",
+  "phyloflow.pyclone_vi_clusters": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/out/pyclone_vi_clusters/cluster_assignment.tsv",
+  "phyloflow.spruce_cliques": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/out/spruce_cliques/spruce.cliques",
+  "phyloflow.spruce_rank_result": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/out/spruce_rank_result/spruce.merged.res",
+  "phyloflow.spruce_result": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/out/spruce_result/spruce.res.gz"
+}

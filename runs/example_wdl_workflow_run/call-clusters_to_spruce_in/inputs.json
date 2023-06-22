@@ -1,0 +1,6 @@
+{
+  "alpha": 0.05,
+  "cluster_tsv_file": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-pyclonevi_clustering/out/cluster_assignment/cluster_assignment.tsv",
+  "cluster_type": "pyclone-vi",
+  "pyclone_vi_formatted": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-vcf_to_pyclonevi_in/out/pyclone_vi_formatted_tsv/pyclone_vi_formatted.tsv"
+}

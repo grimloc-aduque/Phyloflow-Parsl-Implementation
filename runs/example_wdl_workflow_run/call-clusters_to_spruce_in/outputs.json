@@ -1,0 +1,5 @@
+{
+  "cluster_transform.err_response": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-clusters_to_spruce_in/out/err_response/stderr.txt",
+  "cluster_transform.response": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-clusters_to_spruce_in/out/response/stdout.txt",
+  "cluster_transform.spruce_input": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-clusters_to_spruce_in/out/spruce_input/spruce_formatted.tsv"
+}

@@ -1,0 +1,7 @@
+--> executable follows <--
+ 
+        cd './cluster_transform/code' ;
+        conda run -n cluster-transform python -B -m \
+        py_code.main -t pyclone-vi -c /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_pyclone_vi/cluster_assignment.tsv -a 0.05 -o /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_cluster_transform/spruce_formatted.tsv -v /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_vcf_transform/pyclone_vi_formatted.tsv
+        
+--> end executable <--

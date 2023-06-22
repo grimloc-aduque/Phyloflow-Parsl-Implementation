@@ -1,0 +1,4 @@
+2023-06-21 10:27:55.793 wdl.w:phyloflow.t:call-spruce_tree_building NOTICE task setup :: name: "spruce_phylogeny", source: "workflows/phyloflow_standalone.wdl", line: 125, column: 1, dir: "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-spruce_tree_building", thread: 140672388781760
+2023-06-21 10:27:55.815 wdl.w:phyloflow.t:call-spruce_tree_building NOTICE docker image :: tag: "public.ecr.aws/k1t6h9x8/phyloflow/spruce:latest", id: "sha256:847ec893244d2f879b54d21050a40abd0fb8ae7b32eecb45b9677bc189776357", RepoDigest: "public.ecr.aws/k1t6h9x8/phyloflow/spruce@sha256:20099fd7dab132370afaded5813b72196e81f301c7bdacb4ad51f01fac297c65"
+2023-06-21 10:27:57.772 wdl.w:phyloflow.t:call-spruce_tree_building NOTICE docker task exit :: state: "complete", exit_code: 0
+2023-06-21 10:27:58.087 wdl.w:phyloflow.t:call-spruce_tree_building NOTICE done

@@ -1,0 +1,2 @@
+writing data as tsv to : /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_0/run_cluster_transform/spruce_formatted.tsv
+

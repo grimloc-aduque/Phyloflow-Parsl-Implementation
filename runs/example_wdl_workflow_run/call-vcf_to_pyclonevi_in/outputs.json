@@ -1,0 +1,10 @@
+{
+  "vcf_transform.err_response": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-vcf_to_pyclonevi_in/out/err_response/stderr.txt",
+  "vcf_transform.headers_json": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-vcf_to_pyclonevi_in/out/headers_json/headers.json",
+  "vcf_transform.mutations_json": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-vcf_to_pyclonevi_in/out/mutations_json/mutations.json",
+  "vcf_transform.pyclone_formatted_tsvs": [
+    "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-vcf_to_pyclonevi_in/out/pyclone_formatted_tsvs/0/A25.tsv"
+  ],
+  "vcf_transform.pyclone_vi_formatted_tsv": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-vcf_to_pyclonevi_in/out/pyclone_vi_formatted_tsv/pyclone_vi_formatted.tsv",
+  "vcf_transform.response": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-vcf_to_pyclonevi_in/out/response/stdout.txt"
+}

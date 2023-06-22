@@ -1,0 +1,4 @@
+{
+  "vcf_file": "/home/alejo/Documents/NCSA/phyloflow_parsl/example_data/A25.mutect2.filtered.snp.vcf",
+  "vcf_type": "mutect"
+}

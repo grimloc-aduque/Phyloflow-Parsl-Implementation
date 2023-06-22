@@ -1,0 +1,16 @@
+
+pwd
+mkdir pyclone_samples
+out_dir=$(pwd)
+cd /code
+sh vcf_transform_entrypoint.sh mutect /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/A25.mutect2.filtered.snp.vcf \
+    $out_dir/headers.json \
+    $out_dir/mutations.json \
+    $out_dir/pyclone_vi_formatted.tsv \
+    $out_dir/pyclone_samples/
+pwd
+ls -al
+cd ..
+ls -al /
+ls /mnt
+    

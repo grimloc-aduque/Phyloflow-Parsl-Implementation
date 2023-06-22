@@ -1,0 +1,18 @@
+
+pwd
+mkdir pyclone_samples
+out_dir=$(pwd)
+cd /code
+conda run -n aggregate-json python aggregate_json.py \
+    -v /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/VEP_raw.A25.mutect2.filtered.snp.vcf \
+    -c /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/cluster_assignment.tsv \
+    -s /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/spruce.res.json \
+    -S /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/spruce.res.gz \
+    -j $out_dir/aggregated.json \
+    --program mutect
+pwd
+ls -al
+cd ..
+ls -al /
+ls /mnt
+    

@@ -1,0 +1,3 @@
+
+sh /code/pyclone_vi_entrypoint.sh /mnt/miniwdl_task_container/work/_miniwdl_inputs/0/pyclone_vi_formatted.tsv
+    

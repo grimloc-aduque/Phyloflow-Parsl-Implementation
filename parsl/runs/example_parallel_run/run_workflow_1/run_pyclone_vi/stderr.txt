@@ -1,0 +1,6 @@
+--> executable follows <--
+
+        conda run -n pyclone-vi pyclone-vi fit --in-file /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_1/run_vcf_transform/pyclone_vi_formatted.tsv --out-file /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_1/run_pyclone_vi/cluster_fit.hdf5
+        conda run -n pyclone-vi pyclone-vi write-results-file --in-file /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_1/run_pyclone_vi/cluster_fit.hdf5 --out-file /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_1/run_pyclone_vi/cluster_assignment.tsv
+        
+--> end executable <--

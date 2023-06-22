@@ -1,0 +1,40 @@
+--> executable follows <--
+ 
+        ./spruce/tool/cliques -s -1 /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_cluster_transform/spruce_formatted.tsv > /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_spruce_tree/spruce.cliques
+        ./spruce/tool/enumerate -clique /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_spruce_tree/spruce.cliques -t 2 -v 3 /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_cluster_transform/spruce_formatted.tsv > /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_spruce_tree/spruce.res
+        gzip -c /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_spruce_tree/spruce.res > /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_spruce_tree/spruce.res.gz
+        zcat /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_spruce_tree/spruce.res.gz | ./spruce/tool/rank - > /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_spruce_tree/spruce.merged.res
+        zcat /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_spruce_tree/spruce.res.gz | ./spruce/tool/visualize -i 0 -a - > /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_spruce_tree/spruce.res.txt
+        zcat /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_spruce_tree/spruce.res.gz | ./spruce/tool/visualize -i 0 -j - > /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_2/run_spruce_tree/spruce.res.json
+        
+--> end executable <--
+Number of state trees for character 0 (0) : 1
+Number of state trees for character 1 (1) : 1
+Number of state trees for character 2 (2) : 1
+Number of state trees for character 3 (3) : 1
+Number of conflicts detected: 0
+Compatibility graph has 4 nodes and 6 edges
+Searching for maximum cliques ... 
+Size: 4; #maximal cliques: 1
+Total number of maximal cliques: 1
+Found 1 maximum cliques of size 4
+Intializing copy-state matrix ...
+
+Enumerating compatible state trees for each character ...
+Generating compatible state trees for character 0 (0) in sample A25 (0) ... Done: 1 state trees
+Generating compatible state trees for character 1 (1) in sample A25 (0) ... Done: 1 state trees
+Generating compatible state trees for character 2 (2) in sample A25 (0) ... Done: 1 state trees
+Generating compatible state trees for character 3 (3) in sample A25 (0) ... Done: 1 state trees
+Number of state trees for character 0 (0) : 1
+Number of state trees for character 1 (1) : 1
+Number of state trees for character 2 (2) : 1
+Number of state trees for character 3 (3) : 1
+
+State tree combination 1/1 ...
+Initializing state tree combination # 0 ...
+0/1/-1 (0)1/2/-1 (0)1/2/-1 (2)
+1/3/-1 (2)1/3/-1 (3)
+1/4/-1 (3)1/4/-1 (4)
+1/5/-1 (4)2/6/-1 (4)2/7/-1 (4)3/8/-1 (4)4/9/-1 (4)5/10/-1 (4)6/11/-1 (4)7/12/-1 (4)8/13/-1 (4)9/14/-1 (4)
+Tree size: 4/4 (10 trees)
+Generated 10 solutions

@@ -1,0 +1,1 @@
+pushd /home/alejo/Documents/NCSA/phyloflow_parsl && miniwdl run --dir=runs/ workflows/phyloflow_standalone.wdl vcf_type=mutect vcf_input_file=./example_data/A25.mutect2.filtered.snp.vcf vep_input_file=./example_data/VEP_raw.A25.mutect2.filtered.snp.vcf; popd

@@ -1,0 +1,4 @@
+2023-06-21 10:27:53.714 wdl.w:phyloflow.t:call-clusters_to_spruce_in NOTICE task setup :: name: "cluster_transform", source: "workflows/phyloflow_standalone.wdl", line: 86, column: 1, dir: "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-clusters_to_spruce_in", thread: 140672388781760
+2023-06-21 10:27:53.733 wdl.w:phyloflow.t:call-clusters_to_spruce_in NOTICE docker image :: tag: "public.ecr.aws/k1t6h9x8/phyloflow/cluster_transform:latest", id: "sha256:2a5afbc635399210f94052cb46c78791c7878ca4d6497ad5e697b05d551b624b", RepoDigest: "public.ecr.aws/k1t6h9x8/phyloflow/cluster_transform@sha256:2ffb66543a2c0d41702bf36a5dcd816ee70c256c47ba15ab6861ca93e548bc20"
+2023-06-21 10:27:55.398 wdl.w:phyloflow.t:call-clusters_to_spruce_in NOTICE docker task exit :: state: "complete", exit_code: 0
+2023-06-21 10:27:55.792 wdl.w:phyloflow.t:call-clusters_to_spruce_in NOTICE done

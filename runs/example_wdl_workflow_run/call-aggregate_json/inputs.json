@@ -1,0 +1,7 @@
+{
+  "cluster_assignment": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-pyclonevi_clustering/out/cluster_assignment/cluster_assignment.tsv",
+  "spruce_json": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-spruce_tree_building/out/tree_json/spruce.res.json",
+  "spruce_res": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-spruce_tree_building/out/result/spruce.res.gz",
+  "vcf_type": "mutect",
+  "vep_file": "/home/alejo/Documents/NCSA/phyloflow_parsl/example_data/VEP_raw.A25.mutect2.filtered.snp.vcf"
+}

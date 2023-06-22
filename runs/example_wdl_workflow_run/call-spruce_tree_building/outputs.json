@@ -1,0 +1,9 @@
+{
+  "spruce_phylogeny.cliques": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-spruce_tree_building/out/cliques/spruce.cliques",
+  "spruce_phylogeny.err_response": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-spruce_tree_building/out/err_response/stderr.txt",
+  "spruce_phylogeny.rank_result": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-spruce_tree_building/out/rank_result/spruce.merged.res",
+  "spruce_phylogeny.response": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-spruce_tree_building/out/response/stdout.txt",
+  "spruce_phylogeny.result": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-spruce_tree_building/out/result/spruce.res.gz",
+  "spruce_phylogeny.tree_json": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-spruce_tree_building/out/tree_json/spruce.res.json",
+  "spruce_phylogeny.tree_text": "/home/alejo/Documents/NCSA/phyloflow_parsl/runs/20230621_102746_phyloflow/call-spruce_tree_building/out/tree_text/spruce.res.txt"
+}
