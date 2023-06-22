@@ -215,537 +215,7 @@ The outputs of the tasks tests go to the */parsl/tests* directory, that contains
     7 directories, 24 files
 
 
-The outputs of a complete workflow run goes to the */pars/runs* directory. For every run a new subdirectory is created. The folder structure for two workflow runs looks as follows:
-
-
-```python
-! tree ./parsl/runs
-```
-
-    [01;34m./parsl/runs[0m
-    ├── [01;34m2023-06-22_09:53:18[0m
-    │   ├── [01;34mrun_aggregate_json[0m
-    │   │   ├── [00maggregated.json[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_cluster_transform[0m
-    │   │   ├── [00mspruce_formatted.tsv[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_pyclone_vi[0m
-    │   │   ├── [00mcluster_assignment.tsv[0m
-    │   │   ├── [00mcluster_fit.hdf5[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_spruce_tree[0m
-    │   │   ├── [00mspruce.cliques[0m
-    │   │   ├── [00mspruce.merged.res[0m
-    │   │   ├── [00mspruce.res[0m
-    │   │   ├── [01;31mspruce.res.gz[0m
-    │   │   ├── [00mspruce.res.json[0m
-    │   │   ├── [00mspruce.res.txt[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_vcf_transform[0m
-    │   │   ├── [00mheaders.json[0m
-    │   │   ├── [00mmutations.json[0m
-    │   │   ├── [01;34mpyclone_samples[0m
-    │   │   │   └── [00mA25.tsv[0m
-    │   │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    ├── [01;34m2023-06-22_09:53:24[0m
-    │   ├── [00maggregated_workflows.json[0m
-    │   ├── [01;34mrun_workflow_0[0m
-    │   │   ├── [01;34mrun_aggregate_json[0m
-    │   │   │   ├── [00maggregated.json[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_cluster_transform[0m
-    │   │   │   ├── [00mspruce_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_pyclone_vi[0m
-    │   │   │   ├── [00mcluster_assignment.tsv[0m
-    │   │   │   ├── [00mcluster_fit.hdf5[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_spruce_tree[0m
-    │   │   │   ├── [00mspruce.cliques[0m
-    │   │   │   ├── [00mspruce.merged.res[0m
-    │   │   │   ├── [00mspruce.res[0m
-    │   │   │   ├── [01;31mspruce.res.gz[0m
-    │   │   │   ├── [00mspruce.res.json[0m
-    │   │   │   ├── [00mspruce.res.txt[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_vcf_transform[0m
-    │   │   │   ├── [00mheaders.json[0m
-    │   │   │   ├── [00mmutations.json[0m
-    │   │   │   ├── [01;34mpyclone_samples[0m
-    │   │   │   │   └── [00mA25.tsv[0m
-    │   │   │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    │   ├── [01;34mrun_workflow_1[0m
-    │   │   ├── [01;34mrun_aggregate_json[0m
-    │   │   │   ├── [00maggregated.json[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_cluster_transform[0m
-    │   │   │   ├── [00mspruce_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_pyclone_vi[0m
-    │   │   │   ├── [00mcluster_assignment.tsv[0m
-    │   │   │   ├── [00mcluster_fit.hdf5[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_spruce_tree[0m
-    │   │   │   ├── [00mspruce.cliques[0m
-    │   │   │   ├── [00mspruce.merged.res[0m
-    │   │   │   ├── [00mspruce.res[0m
-    │   │   │   ├── [01;31mspruce.res.gz[0m
-    │   │   │   ├── [00mspruce.res.json[0m
-    │   │   │   ├── [00mspruce.res.txt[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_vcf_transform[0m
-    │   │   │   ├── [00mheaders.json[0m
-    │   │   │   ├── [00mmutations.json[0m
-    │   │   │   ├── [01;34mpyclone_samples[0m
-    │   │   │   │   └── [00mA25.tsv[0m
-    │   │   │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    │   └── [01;34mrun_workflow_2[0m
-    │       ├── [01;34mrun_aggregate_json[0m
-    │       │   ├── [00maggregated.json[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_cluster_transform[0m
-    │       │   ├── [00mspruce_formatted.tsv[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_pyclone_vi[0m
-    │       │   ├── [00mcluster_assignment.tsv[0m
-    │       │   ├── [00mcluster_fit.hdf5[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_spruce_tree[0m
-    │       │   ├── [00mspruce.cliques[0m
-    │       │   ├── [00mspruce.merged.res[0m
-    │       │   ├── [00mspruce.res[0m
-    │       │   ├── [01;31mspruce.res.gz[0m
-    │       │   ├── [00mspruce.res.json[0m
-    │       │   ├── [00mspruce.res.txt[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_vcf_transform[0m
-    │       │   ├── [00mheaders.json[0m
-    │       │   ├── [00mmutations.json[0m
-    │       │   ├── [01;34mpyclone_samples[0m
-    │       │   │   └── [00mA25.tsv[0m
-    │       │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    ├── [01;34m2023-06-22_10:02:45[0m
-    │   ├── [01;34mrun_aggregate_json[0m
-    │   │   ├── [00maggregated.json[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_cluster_transform[0m
-    │   │   ├── [00mspruce_formatted.tsv[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_pyclone_vi[0m
-    │   │   ├── [00mcluster_assignment.tsv[0m
-    │   │   ├── [00mcluster_fit.hdf5[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_spruce_tree[0m
-    │   │   ├── [00mspruce.cliques[0m
-    │   │   ├── [00mspruce.merged.res[0m
-    │   │   ├── [00mspruce.res[0m
-    │   │   ├── [01;31mspruce.res.gz[0m
-    │   │   ├── [00mspruce.res.json[0m
-    │   │   ├── [00mspruce.res.txt[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_vcf_transform[0m
-    │   │   ├── [00mheaders.json[0m
-    │   │   ├── [00mmutations.json[0m
-    │   │   ├── [01;34mpyclone_samples[0m
-    │   │   │   └── [00mA25.tsv[0m
-    │   │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    ├── [01;34m2023-06-22_10:02:50[0m
-    │   ├── [00maggregated_workflows.json[0m
-    │   ├── [01;34mrun_workflow_0[0m
-    │   │   ├── [01;34mrun_aggregate_json[0m
-    │   │   │   ├── [00maggregated.json[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_cluster_transform[0m
-    │   │   │   ├── [00mspruce_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_pyclone_vi[0m
-    │   │   │   ├── [00mcluster_assignment.tsv[0m
-    │   │   │   ├── [00mcluster_fit.hdf5[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_spruce_tree[0m
-    │   │   │   ├── [00mspruce.cliques[0m
-    │   │   │   ├── [00mspruce.merged.res[0m
-    │   │   │   ├── [00mspruce.res[0m
-    │   │   │   ├── [01;31mspruce.res.gz[0m
-    │   │   │   ├── [00mspruce.res.json[0m
-    │   │   │   ├── [00mspruce.res.txt[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_vcf_transform[0m
-    │   │   │   ├── [00mheaders.json[0m
-    │   │   │   ├── [00mmutations.json[0m
-    │   │   │   ├── [01;34mpyclone_samples[0m
-    │   │   │   │   └── [00mA25.tsv[0m
-    │   │   │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    │   ├── [01;34mrun_workflow_1[0m
-    │   │   ├── [01;34mrun_aggregate_json[0m
-    │   │   │   ├── [00maggregated.json[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_cluster_transform[0m
-    │   │   │   ├── [00mspruce_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_pyclone_vi[0m
-    │   │   │   ├── [00mcluster_assignment.tsv[0m
-    │   │   │   ├── [00mcluster_fit.hdf5[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_spruce_tree[0m
-    │   │   │   ├── [00mspruce.cliques[0m
-    │   │   │   ├── [00mspruce.merged.res[0m
-    │   │   │   ├── [00mspruce.res[0m
-    │   │   │   ├── [01;31mspruce.res.gz[0m
-    │   │   │   ├── [00mspruce.res.json[0m
-    │   │   │   ├── [00mspruce.res.txt[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_vcf_transform[0m
-    │   │   │   ├── [00mheaders.json[0m
-    │   │   │   ├── [00mmutations.json[0m
-    │   │   │   ├── [01;34mpyclone_samples[0m
-    │   │   │   │   └── [00mA25.tsv[0m
-    │   │   │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    │   └── [01;34mrun_workflow_2[0m
-    │       ├── [01;34mrun_aggregate_json[0m
-    │       │   ├── [00maggregated.json[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_cluster_transform[0m
-    │       │   ├── [00mspruce_formatted.tsv[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_pyclone_vi[0m
-    │       │   ├── [00mcluster_assignment.tsv[0m
-    │       │   ├── [00mcluster_fit.hdf5[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_spruce_tree[0m
-    │       │   ├── [00mspruce.cliques[0m
-    │       │   ├── [00mspruce.merged.res[0m
-    │       │   ├── [00mspruce.res[0m
-    │       │   ├── [01;31mspruce.res.gz[0m
-    │       │   ├── [00mspruce.res.json[0m
-    │       │   ├── [00mspruce.res.txt[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_vcf_transform[0m
-    │       │   ├── [00mheaders.json[0m
-    │       │   ├── [00mmutations.json[0m
-    │       │   ├── [01;34mpyclone_samples[0m
-    │       │   │   └── [00mA25.tsv[0m
-    │       │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    ├── [01;34m2023-06-22_10:47:35[0m
-    │   ├── [01;34mrun_aggregate_json[0m
-    │   │   ├── [00maggregated.json[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_cluster_transform[0m
-    │   │   ├── [00mspruce_formatted.tsv[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_pyclone_vi[0m
-    │   │   ├── [00mcluster_assignment.tsv[0m
-    │   │   ├── [00mcluster_fit.hdf5[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_spruce_tree[0m
-    │   │   ├── [00mspruce.cliques[0m
-    │   │   ├── [00mspruce.merged.res[0m
-    │   │   ├── [00mspruce.res[0m
-    │   │   ├── [01;31mspruce.res.gz[0m
-    │   │   ├── [00mspruce.res.json[0m
-    │   │   ├── [00mspruce.res.txt[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   ├── [01;34mrun_vcf_transform[0m
-    │   │   ├── [00mheaders.json[0m
-    │   │   ├── [00mmutations.json[0m
-    │   │   ├── [01;34mpyclone_samples[0m
-    │   │   │   └── [00mA25.tsv[0m
-    │   │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │   │   ├── [00mstderr.txt[0m
-    │   │   └── [00mstdout.txt[0m
-    │   └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    ├── [01;34m2023-06-22_10:47:56[0m
-    │   ├── [00maggregated_workflows.json[0m
-    │   ├── [01;34mrun_workflow_0[0m
-    │   │   ├── [01;34mrun_aggregate_json[0m
-    │   │   │   ├── [00maggregated.json[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_cluster_transform[0m
-    │   │   │   ├── [00mspruce_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_pyclone_vi[0m
-    │   │   │   ├── [00mcluster_assignment.tsv[0m
-    │   │   │   ├── [00mcluster_fit.hdf5[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_spruce_tree[0m
-    │   │   │   ├── [00mspruce.cliques[0m
-    │   │   │   ├── [00mspruce.merged.res[0m
-    │   │   │   ├── [00mspruce.res[0m
-    │   │   │   ├── [01;31mspruce.res.gz[0m
-    │   │   │   ├── [00mspruce.res.json[0m
-    │   │   │   ├── [00mspruce.res.txt[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_vcf_transform[0m
-    │   │   │   ├── [00mheaders.json[0m
-    │   │   │   ├── [00mmutations.json[0m
-    │   │   │   ├── [01;34mpyclone_samples[0m
-    │   │   │   │   └── [00mA25.tsv[0m
-    │   │   │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    │   ├── [01;34mrun_workflow_1[0m
-    │   │   ├── [01;34mrun_aggregate_json[0m
-    │   │   │   ├── [00maggregated.json[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_cluster_transform[0m
-    │   │   │   ├── [00mspruce_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_pyclone_vi[0m
-    │   │   │   ├── [00mcluster_assignment.tsv[0m
-    │   │   │   ├── [00mcluster_fit.hdf5[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_spruce_tree[0m
-    │   │   │   ├── [00mspruce.cliques[0m
-    │   │   │   ├── [00mspruce.merged.res[0m
-    │   │   │   ├── [00mspruce.res[0m
-    │   │   │   ├── [01;31mspruce.res.gz[0m
-    │   │   │   ├── [00mspruce.res.json[0m
-    │   │   │   ├── [00mspruce.res.txt[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_vcf_transform[0m
-    │   │   │   ├── [00mheaders.json[0m
-    │   │   │   ├── [00mmutations.json[0m
-    │   │   │   ├── [01;34mpyclone_samples[0m
-    │   │   │   │   └── [00mA25.tsv[0m
-    │   │   │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    │   └── [01;34mrun_workflow_2[0m
-    │       ├── [01;34mrun_aggregate_json[0m
-    │       │   ├── [00maggregated.json[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_cluster_transform[0m
-    │       │   ├── [00mspruce_formatted.tsv[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_pyclone_vi[0m
-    │       │   ├── [00mcluster_assignment.tsv[0m
-    │       │   ├── [00mcluster_fit.hdf5[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_spruce_tree[0m
-    │       │   ├── [00mspruce.cliques[0m
-    │       │   ├── [00mspruce.merged.res[0m
-    │       │   ├── [00mspruce.res[0m
-    │       │   ├── [01;31mspruce.res.gz[0m
-    │       │   ├── [00mspruce.res.json[0m
-    │       │   ├── [00mspruce.res.txt[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_vcf_transform[0m
-    │       │   ├── [00mheaders.json[0m
-    │       │   ├── [00mmutations.json[0m
-    │       │   ├── [01;34mpyclone_samples[0m
-    │       │   │   └── [00mA25.tsv[0m
-    │       │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    ├── [01;34mexample_parallel_run[0m
-    │   ├── [00maggregated_workflows.json[0m
-    │   ├── [01;34mrun_workflow_0[0m
-    │   │   ├── [01;34mrun_aggregate_json[0m
-    │   │   │   ├── [00maggregated.json[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_cluster_transform[0m
-    │   │   │   ├── [00mspruce_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_pyclone_vi[0m
-    │   │   │   ├── [00mcluster_assignment.tsv[0m
-    │   │   │   ├── [00mcluster_fit.hdf5[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_spruce_tree[0m
-    │   │   │   ├── [00mspruce.cliques[0m
-    │   │   │   ├── [00mspruce.merged.res[0m
-    │   │   │   ├── [00mspruce.res[0m
-    │   │   │   ├── [01;31mspruce.res.gz[0m
-    │   │   │   ├── [00mspruce.res.json[0m
-    │   │   │   ├── [00mspruce.res.txt[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_vcf_transform[0m
-    │   │   │   ├── [00mheaders.json[0m
-    │   │   │   ├── [00mmutations.json[0m
-    │   │   │   ├── [01;34mpyclone_samples[0m
-    │   │   │   │   └── [00mA25.tsv[0m
-    │   │   │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    │   ├── [01;34mrun_workflow_1[0m
-    │   │   ├── [01;34mrun_aggregate_json[0m
-    │   │   │   ├── [00maggregated.json[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_cluster_transform[0m
-    │   │   │   ├── [00mspruce_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_pyclone_vi[0m
-    │   │   │   ├── [00mcluster_assignment.tsv[0m
-    │   │   │   ├── [00mcluster_fit.hdf5[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_spruce_tree[0m
-    │   │   │   ├── [00mspruce.cliques[0m
-    │   │   │   ├── [00mspruce.merged.res[0m
-    │   │   │   ├── [00mspruce.res[0m
-    │   │   │   ├── [01;31mspruce.res.gz[0m
-    │   │   │   ├── [00mspruce.res.json[0m
-    │   │   │   ├── [00mspruce.res.txt[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   ├── [01;34mrun_vcf_transform[0m
-    │   │   │   ├── [00mheaders.json[0m
-    │   │   │   ├── [00mmutations.json[0m
-    │   │   │   ├── [01;34mpyclone_samples[0m
-    │   │   │   │   └── [00mA25.tsv[0m
-    │   │   │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │   │   │   ├── [00mstderr.txt[0m
-    │   │   │   └── [00mstdout.txt[0m
-    │   │   └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    │   └── [01;34mrun_workflow_2[0m
-    │       ├── [01;34mrun_aggregate_json[0m
-    │       │   ├── [00maggregated.json[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_cluster_transform[0m
-    │       │   ├── [00mspruce_formatted.tsv[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_pyclone_vi[0m
-    │       │   ├── [00mcluster_assignment.tsv[0m
-    │       │   ├── [00mcluster_fit.hdf5[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_spruce_tree[0m
-    │       │   ├── [00mspruce.cliques[0m
-    │       │   ├── [00mspruce.merged.res[0m
-    │       │   ├── [00mspruce.res[0m
-    │       │   ├── [01;31mspruce.res.gz[0m
-    │       │   ├── [00mspruce.res.json[0m
-    │       │   ├── [00mspruce.res.txt[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       ├── [01;34mrun_vcf_transform[0m
-    │       │   ├── [00mheaders.json[0m
-    │       │   ├── [00mmutations.json[0m
-    │       │   ├── [01;34mpyclone_samples[0m
-    │       │   │   └── [00mA25.tsv[0m
-    │       │   ├── [00mpyclone_vi_formatted.tsv[0m
-    │       │   ├── [00mstderr.txt[0m
-    │       │   └── [00mstdout.txt[0m
-    │       └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    └── [01;34mexample_workflow_run[0m
-        ├── [01;34mrun_aggregate_json[0m
-        │   ├── [00maggregated.json[0m
-        │   ├── [00mstderr.txt[0m
-        │   └── [00mstdout.txt[0m
-        ├── [01;34mrun_cluster_transform[0m
-        │   ├── [00mspruce_formatted.tsv[0m
-        │   ├── [00mstderr.txt[0m
-        │   └── [00mstdout.txt[0m
-        ├── [01;34mrun_pyclone_vi[0m
-        │   ├── [00mcluster_assignment.tsv[0m
-        │   ├── [00mcluster_fit.hdf5[0m
-        │   ├── [00mstderr.txt[0m
-        │   └── [00mstdout.txt[0m
-        ├── [01;34mrun_spruce_tree[0m
-        │   ├── [00mspruce.cliques[0m
-        │   ├── [00mspruce.merged.res[0m
-        │   ├── [00mspruce.res[0m
-        │   ├── [01;31mspruce.res.gz[0m
-        │   ├── [00mspruce.res.json[0m
-        │   ├── [00mspruce.res.txt[0m
-        │   ├── [00mstderr.txt[0m
-        │   └── [00mstdout.txt[0m
-        ├── [01;34mrun_vcf_transform[0m
-        │   ├── [00mheaders.json[0m
-        │   ├── [00mmutations.json[0m
-        │   ├── [01;34mpyclone_samples[0m
-        │   │   └── [00mA25.tsv[0m
-        │   ├── [00mpyclone_vi_formatted.tsv[0m
-        │   ├── [00mstderr.txt[0m
-        │   └── [00mstdout.txt[0m
-        └── [00mVEP_raw.A25.mutect2.filtered.snp.vcf[0m
-    
-    117 directories, 404 files
-
+The outputs of a complete workflow run goes to the */pars/runs* directory.
 
 ## Full Workflow
 
@@ -822,13 +292,13 @@ test_workflow()
     
     Scheduling Workflow
     Input file: /home/alejo/Documents/NCSA/phyloflow_parsl/example_data/VEP_raw.A25.mutect2.filtered.snp.vcf
-    Output dir: /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_10:47:35
-    <AppFuture at 0x7f77fc265ad0 state=pending>
-    <AppFuture at 0x7f77e6a63ad0 state=pending>
-    <AppFuture at 0x7f77e6a8c190 state=pending>
-    <AppFuture at 0x7f77e6a8d2d0 state=pending>
-    <AppFuture at 0x7f77e6a8eb90 state=pending>
-    <AppFuture at 0x7f77e6a8eb90 state=pending>
+    Output dir: /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_10:58:21
+    <AppFuture at 0x7efd4996b2d0 state=pending>
+    <AppFuture at 0x7efd498d67d0 state=pending>
+    <AppFuture at 0x7efd498d71d0 state=pending>
+    <AppFuture at 0x7efd498f0550 state=pending>
+    <AppFuture at 0x7efd498f1990 state=pending>
+    <AppFuture at 0x7efd498f1990 state=pending>
 
 
 
@@ -836,7 +306,7 @@ test_workflow()
 ! tree {os.path.join(RUNS_DIR, os.listdir(RUNS_DIR)[-1])}
 ```
 
-    [01;34m/home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_10:47:35[0m
+    [01;34m/home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_10:58:21[0m
     ├── [01;34mrun_aggregate_json[0m
     │   ├── [00maggregated.json[0m
     │   ├── [00mstderr.txt[0m
@@ -945,37 +415,33 @@ test_parallel_workflows()
     
     Scheduling Workflow
     Input file: /home/alejo/Documents/NCSA/phyloflow_parsl/example_data/VEP_raw.A25.mutect2.filtered.snp.vcf
-    Output dir: /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_10:47:56/run_workflow_0
-    <AppFuture at 0x7f77e6aa2450 state=pending>
-    <AppFuture at 0x7f77e6aa3250 state=pending>
-    <AppFuture at 0x7f77e6aa3810 state=pending>
-    <AppFuture at 0x7f77e6aa43d0 state=pending>
-    <AppFuture at 0x7f77e6aa5e50 state=pending>
+    Output dir: /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_10:58:34/run_workflow_0
+    <AppFuture at 0x7efd498f35d0 state=pending>
+    <AppFuture at 0x7efd4996d9d0 state=pending>
+    <AppFuture at 0x7efd4996e7d0 state=pending>
+    <AppFuture at 0x7efd4996fb90 state=pending>
+    <AppFuture at 0x7efd49969d90 state=pending>
     
     Scheduling Workflow
     Input file: /home/alejo/Documents/NCSA/phyloflow_parsl/example_data/VEP_raw.A25.mutect2.filtered.snp.vcf
-    Output dir: /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_10:47:56/run_workflow_1
-    <AppFuture at 0x7f77e6aa5b50 state=pending>
-    <AppFuture at 0x7f77e6aa7d50 state=pending>
-    <AppFuture at 0x7f77e6ab47d0 state=pending>
-    <AppFuture at 0x7f77e6ab5f90 state=pending>
-    <AppFuture at 0x7f77e6b69c50 state=pending>
+    Output dir: /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_10:58:34/run_workflow_1
+    <AppFuture at 0x7efd498f3950 state=pending>
+    <AppFuture at 0x7efd498f1010 state=pending>
+    <AppFuture at 0x7efd498f0810 state=pending>
+    <AppFuture at 0x7efd5b895f90 state=pending>
+    <AppFuture at 0x7efd498d7950 state=pending>
     
     Scheduling Workflow
     Input file: /home/alejo/Documents/NCSA/phyloflow_parsl/example_data/VEP_raw.A25.mutect2.filtered.snp.vcf
-    Output dir: /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_10:47:56/run_workflow_2
-    <AppFuture at 0x7f77e6a8ccd0 state=pending>
-    <AppFuture at 0x7f77e6b4d490 state=pending>
-    <AppFuture at 0x7f77e6b45410 state=pending>
-    <AppFuture at 0x7f77e6ab5310 state=pending>
-    <AppFuture at 0x7f77e6ab7cd0 state=pending>
+    Output dir: /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_10:58:34/run_workflow_2
+    <AppFuture at 0x7efd498d5c90 state=pending>
+    <AppFuture at 0x7efd486ff450 state=pending>
+    <AppFuture at 0x7efd498f0a10 state=pending>
+    <AppFuture at 0x7efd48715710 state=pending>
+    <AppFuture at 0x7efd48716d50 state=pending>
     
     Scheduling Workflow Aggregation
-    <AppFuture at 0x7f77e6abcd50 state=pending>
-    
-    All Workflows Finished !
-    Elapsed Time: 7.41 [seconds]
-    
+    <AppFuture at 0x7efd49969a50 state=pending>
 
 
 # Docker Container
