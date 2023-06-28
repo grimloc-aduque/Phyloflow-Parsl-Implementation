@@ -33,11 +33,11 @@ task pyclone_vi_clustering{
 		File response = stdout()
 		File err_response = stderr()
 		File cluster_assignment = 'cluster_assignment.tsv'
-		}
+	}
 
 	runtime {
 		docker: 'public.ecr.aws/k1t6h9x8/phyloflow/pyclone_vi:latest'
-		}
+	}
 }
 
 ```
