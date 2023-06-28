@@ -21,9 +21,9 @@ A common WDL script is comprised of a series of tasks that are called within a w
 
 ```
 task pyclone_vi_clustering{
-    input {
+	input {
 		File mutations_tsv
-    }
+	}
 
 	command {
 		sh /code/pyclone_vi_entrypoint.sh ${mutations_tsv}
