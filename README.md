@@ -464,6 +464,6 @@ The container has been tested on Linux and Mac Systems
 
 ## Parsl Cons
 
-* Parsl requieres more knowledge of the filesystem
+* Parsl requires more knowledge of the filesystem
 * It is harder in Parsl to run tasks that have conflicting dependencies
 * Retrieving inputs and outputs by indexing an array can get confusing and error prone
