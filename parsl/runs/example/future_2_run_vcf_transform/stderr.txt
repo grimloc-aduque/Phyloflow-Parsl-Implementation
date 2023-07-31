@@ -1,0 +1,21 @@
+--> executable follows <--
+ 
+        cd './vcf_transform/code';
+        conda run -n vcf-transform python -B -m py_code.main mutect \
+        /home/alejo/Documents/NCSA/phyloflow_parsl/example_data/pyclone_vi_formatted.tsv /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/headers.json /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/mutations.json /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/pyclone_vi_formatted.tsv /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/pyclone_samples
+        
+--> end executable <--
+Traceback (most recent call last):
+  File "/home/alejo/miniconda3/envs/vcf-transform/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/alejo/miniconda3/envs/vcf-transform/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/alejo/Documents/NCSA/phyloflow_parsl/vcf_transform/code/py_code/main.py", line 96, in <module>
+    succeeded = main(sys.argv[1:])
+  File "/home/alejo/Documents/NCSA/phyloflow_parsl/vcf_transform/code/py_code/main.py", line 30, in main
+    mutations = Mutation.mutation_list_from_mutect(sample_id, vcf_reader)
+  File "/home/alejo/Documents/NCSA/phyloflow_parsl/vcf_transform/code/py_code/mutation.py", line 54, in mutation_list_from_mutect
+    tumor_samples = vcf_reader.metadata["tumor_sample"]
+KeyError: 'tumor_sample'
+
+ERROR conda.cli.main_run:execute(47): `conda run python -B -m py_code.main mutect /home/alejo/Documents/NCSA/phyloflow_parsl/example_data/pyclone_vi_formatted.tsv /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/headers.json /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/mutations.json /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/pyclone_vi_formatted.tsv /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/pyclone_samples` failed. (See above for error)

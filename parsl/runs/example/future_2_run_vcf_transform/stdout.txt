@@ -1,0 +1,4 @@
+main.py: got the args: ['mutect', '/home/alejo/Documents/NCSA/phyloflow_parsl/example_data/pyclone_vi_formatted.tsv', '/home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/headers.json', '/home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/mutations.json', '/home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/pyclone_vi_formatted.tsv', '/home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/pyclone_samples']
+writing header info as json to : /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-07-25_10:20:25/future_2_run_vcf_transform/headers.json
+OrderedDict()
+

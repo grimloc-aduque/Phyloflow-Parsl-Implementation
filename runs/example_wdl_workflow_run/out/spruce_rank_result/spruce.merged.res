@@ -1,1 +1,0 @@
-../../call-spruce_tree_building/work/spruce.merged.res

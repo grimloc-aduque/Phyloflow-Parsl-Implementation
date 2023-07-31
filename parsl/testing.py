@@ -1,71 +1,65 @@
 
-import copy
 import os
-from time import time
 
-from filesystem_util import (DATA_DIR, RUNS_DIR, TEST_DIR, format_files,
-                             generate_run_dir)
-from tasks import *
-from workflow import run_parallel_workflows, run_workflow
+from filesystem_util import DATA_DIR
+from function_calls import *
+from workflow_tasks import *
 
-from parsl.data_provider.files import File
+# --------------------- Test Files ---------------------
+
+test_files = {
+    'vep_vcf': 'VEP_raw.A25.mutect2.filtered.snp.vcf',
+    'pyclone_vi_formatted': 'pyclone_vi_formatted.tsv',
+    'cluster_assignment': 'cluster_assignment.tsv',
+    'spruce_formatted': 'spruce_formatted.tsv',
+    'spruce_json': 'spruce.res.json',
+    'spruce_gz': 'spruce.res.gz'    
+}
+
+for k,v in test_files.items():
+    test_files[k] = os.path.join(DATA_DIR, v)
+
 
 # --------------------- Unit Testing ---------------------
 
-def test_task(inputs, run_task_func):
-    inputs = format_files(DATA_DIR, inputs)
-    future = run_task_func(inputs, TEST_DIR)
-    print(future)
-    future.result()
 
 def test_vcf_transform():
-    inputs = ['VEP_raw.A25.mutect2.filtered.snp.vcf']
-    test_task(inputs, run_vcf_transform)
+    fcall_vcf_transform_from_files(
+        vep_vcf=test_files['vep_vcf']
+    )
 
 def test_pyclone_vi():
-    inputs = ['pyclone_vi_formatted.tsv']
-    test_task(inputs, run_pyclone_vi)
+    fcall_pyclone_vi_from_files(
+        pyclone_vi_formatted=test_files['pyclone_vi_formatted']
+    )
 
 def test_cluster_transform():
-    inputs = ['pyclone_vi_formatted.tsv', 
-              'cluster_assignment.tsv']
-    test_task(inputs, run_cluster_transform)
+    fcall_cluster_transform_from_files(
+        pyclone_vi_formatted=test_files['pyclone_vi_formatted'],
+        cluster_assignment=test_files['cluster_assignment']
+    )
 
 def test_spruce_tree():
-    inputs = ['spruce_formatted.tsv']
-    test_task(inputs, run_spruce_tree)
+    fcall_spruce_tree_from_files(
+        spruce_formatted=test_files['spruce_formatted']
+    )
 
 def test_aggregate_json():
-    inputs = ['VEP_raw.A25.mutect2.filtered.snp.vcf',
-              'cluster_assignment.tsv',
-              'spruce.res.json',
-              'spruce.res.gz']
-    test_task(inputs, run_aggregate_json)
+    fcall_aggregate_json_from_files(
+        vep_vcf=test_files['vep_vcf'],
+        cluster_assignment=test_files['cluster_assignment'],
+        spruce_json=test_files['spruce_json'],
+        spruce_gz=test_files['spruce_gz']
+    )
 
-
-
-# --------------------- Integration Testing ---------------------
-
-def test_workflow():
-    rundir = generate_run_dir(RUNS_DIR)
-    inputs = [File('VEP_raw.A25.mutect2.filtered.snp.vcf')]
-    inputs = format_files(DATA_DIR, inputs)
-    future = run_workflow(inputs[0], rundir)
-    print(future)
-    future.result()
-
+def test_full_workflow():
+    future_id = fcall_full_workflow(
+        vep_vcf=test_files['vep_vcf']
+    )
+    AppFutureManager.query(future_id).result()
 
 def test_parallel_workflows():
-    rundir = generate_run_dir(RUNS_DIR)
-    input_file = os.path.join(DATA_DIR, 'VEP_raw.A25.mutect2.filtered.snp.vcf')
-    input_file = File(input_file)
-    files = []
-    for _ in range(3):
-        files.append(copy.deepcopy(input_file))
-
-    start = time()
-    last_future = run_parallel_workflows(files, rundir)
-    last_future.result()
-    end = time()
-    print("\nAll Workflows Finished !")
-    print(f"Elapsed Time: {round(end - start, 2)} [seconds]\n")
+    future_id = fcall_parallel_workflows(
+        vep_vcf_files=[test_files['vep_vcf']]*3
+    )
+    AppFutureManager.query(future_id).result()

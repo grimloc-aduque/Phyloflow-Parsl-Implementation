@@ -1,7 +1,0 @@
---> executable follows <--
- 
-        cd './vcf_transform/code';
-        conda run -n vcf-transform python -B -m py_code.main mutect \
-        /home/alejo/Documents/NCSA/phyloflow_parsl/example_data/VEP_raw.A25.mutect2.filtered.snp.vcf /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_1/run_vcf_transform/headers.json /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_1/run_vcf_transform/mutations.json /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_1/run_vcf_transform/pyclone_vi_formatted.tsv /home/alejo/Documents/NCSA/phyloflow_parsl/parsl/runs/2023-06-22_09:53:03/run_workflow_1/run_vcf_transform/pyclone_samples
-        
---> end executable <--
